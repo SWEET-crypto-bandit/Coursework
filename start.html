@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+
+<video autoplay loop muted id="video">
+            <source src="music/NVJ3KAEAAAA.mp4" type="video/mp4">
+       </video>
+       
+    
+   
+    <audio id="bgMusic" src="music/Iz_multfilma_-_SHrek_(SkySound.cc).mp3"></audio>
+    <button class="startGame" onclick="startGame()">Играть</button>
+<audio id="bgMusic1" src="music/videoplayback2.mp3"></audio>
+<audio id="bgMusicDoor" src="music/Дверьбунккр.mp3"></audio>
+<audio id="bgMusic2" src="music/pda_4LbLWWH.mp3"></audio>
+<audio id="bgMusic3" src="music/pvpmusic.mp3"></audio>
+<audio id="bgMusic4" src="music/удар.mp3"></audio>
+
+
+
+<div class="interface" id="interface">
+<span id="hp"></span>
+<span id="$"></span>
+<span id="radiation">☢️</span>
+</div>
+
+<button onclick="skipToCharacterSelect()" style="position:fixed; top:10px; right:10px; z-index:99999; background:red;">
+    ТЕСТ: ПРОПУСТИТЬ ДО ВЫБОРА ПЕРСОНАЖА
+</button>
+
+<script src="variables.js"></script>
+<script src="player.js"></script>
+<script src="interface.js"></script>
+<script src="pvp.js"></script>
+<script src="templates.js"></script>
+
+<script src="touls.js"></script>
+<script src="delet.js"></script>
+<script src="music/musicStart.js"></script>
+  <script src="index.js"></script>  
+</body>
+</html>

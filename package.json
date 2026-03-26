@@ -1,0 +1,12 @@
+{
+  "name": "coursework",
+  "version": "1.0.0",
+  "description": "Задания на динамическое создание HTML элементов",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
