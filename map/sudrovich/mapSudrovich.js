@@ -24,7 +24,7 @@ function finishDeal() {
 
   Player.maney += pendingGold;
   Player.gold += pendingGold;
-  if (pendingGold < 100) {
+  if (pendingGold < 100 && pendingGold > 0) {
     playMisuc10();
   }
   if (pendingGold >= 99) {

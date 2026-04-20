@@ -3,11 +3,17 @@ async function chigur() {
   playMisuc13();
   await videoTimerRevers('чигурпришел');
   videoRevers('выбор');
-  choiceDialog2('орел орешка?', 'орел', 'орешка', eagle);
+  choiceDialog2('орел орешка?', 'орел', 'орешка', eagle, nut);
 }
 async function eagle() {
   await videoTimerRevers('чигурорел');
   shop();
+}
+async function nut() {
+  Player.maney = 10
+  Player.health = 10
+  upInterface()
+  hospital()
 }
 // покупка предметов
 function shopBuy() {

@@ -8,7 +8,8 @@ export interface Enemy {
 export interface Player {
   name?: string;
   maney: number;
-  lvl: number;
+  food: number;
+  maxFood: number;
   health: number;
   maxHealth: number;
   damage: number;

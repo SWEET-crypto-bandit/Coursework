@@ -1,9 +1,42 @@
-let fffff = 0;
+let flagStartVideo = 0;
+
+function continueGame() {
+  if (typeof loadPlayerFromSave === 'function') {
+    loadPlayerFromSave();
+  }
+
+  const startBtn = document.querySelector('.startGame');
+  if (startBtn) startBtn.remove();
+
+  const continueBtn = document.getElementById('continueGameBtn');
+  if (continueBtn) continueBtn.remove();
+
+  upInterface();
+  hospital();
+}
+
+
+try {
+  const continueBtn = document.getElementById('continueGameBtn');
+  if (
+    continueBtn &&
+    typeof hasPlayerSave === 'function' &&
+    hasPlayerSave() === true
+  ) {
+    continueBtn.style.display = '';
+  }
+} catch (e) {
+  console.error('continue button init: failed', e);
+}
+
 function onVideoEnd() {
-  if (fffff === 1) {
+  if (flagStartVideo === 1) {
     return;
   }
-  video.src = 'music/0317.mp4';
+  if (typeof loadPlayerFromSave === 'function') {
+    loadPlayerFromSave();
+  }
+  video.src = 'music/История.mp4';
   video.muted = false;
   video.loop = false;
 
@@ -13,7 +46,7 @@ function onVideoEnd() {
       video.style.display = 'none';
       playMisuc1();
       titl();
-      fffff++;
+      flagStartVideo++;
     },
     { once: true }
   );

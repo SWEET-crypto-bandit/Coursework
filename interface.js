@@ -1,6 +1,7 @@
 function upInterface() {
   hp.textContent = `ХП  ${Player.health}❤️`;
   $.textContent = ` MANEY ${Player.maney}💸`;
+  food.textContent = ` food ${Player.food}🍕`
   radiation.textContent = `РАДИАЦИЯ  ${Player.radiation}☢️`;
 }
 

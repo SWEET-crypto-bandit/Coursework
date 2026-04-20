@@ -1,3 +1,4 @@
+// templates.js маштабирован с помощью ии
 function creayDialog(text) {
   //промис для диалогов
   return new Promise((resolve) => {

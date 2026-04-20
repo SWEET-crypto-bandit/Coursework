@@ -88,3 +88,95 @@ function playMisuc13() {
     dd.pause();
   }
 }
+function playMisuc14() {
+  const dd = document.getElementById('bgMusic14');
+  if (mapVariable === 'hospital') {
+    dd.play();
+  } else {
+    dd.pause();
+  }
+}
+function playMisuc15() {
+  document.getElementById('bgMusic15').play()
+}
+
+function playDarkMisuc1 () {
+   const dd = document.getElementById('bgDarkMisuc1')
+   if(mapVariable === 'darkcity') {
+    dd.loop = true
+dd.play()
+   } else {
+    dd.pause()
+   }
+ }
+
+ function playDarkMisuc3 () {
+   const dd = document.getElementById('bgDarkMisuc3')
+   if(mapVariable === 'snackBar') {
+    dd.loop = true
+dd.play()
+   } else {
+    dd.pause()
+   }
+ }
+
+function playDarkMisuc5() {
+   const dd = document.getElementById('bgDarkMisuc5')
+   if(mapVariable === 'director') {
+    dd.loop = true
+dd.play()
+   } else {
+    dd.pause()
+   }
+ }
+function playDarkMisuc6() {
+   const dd = document.getElementById('bgDarkMisuc8')
+   if(mapVariable === 'pvp3') {
+    dd.loop = true
+dd.play()
+   } else {
+    dd.pause()
+   }
+ }
+// гитара
+async function playDarkGitaraMusic() {
+  const git1 = document.getElementById('bgDarkMisuc2');
+  const git2 = document.getElementById('bgDarkMisuc4');
+  const git3 = document.getElementById('bgDarkMisuc6');
+  const git4 = document.getElementById('bgDarkMisuc7');
+
+  if (mapVariable === 'playGitara') {
+    mapVariable = 'playGitara1';
+    git4.pause();
+    git1.loop = true;
+    git1.play();
+    await choiceDialog2('За каждые 5с 1 бублик', 'уйти', 'поменять музыку', darkcity, playDarkGitaraMusic);
+
+  } else if (mapVariable === 'playGitara1') { // Используем else if
+    mapVariable = 'playGitara2';
+    git1.pause();
+    git2.loop = true;
+    git2.play();
+    await choiceDialog2('За каждые 5с 1 бублик', 'уйти', 'поменять музыку', darkcity, playDarkGitaraMusic);
+
+  } else if (mapVariable === 'playGitara2') { // Используем else if
+    mapVariable = 'playGitara3';
+    git2.pause();
+    git3.loop = true;
+    git3.play();
+    await choiceDialog2('За каждые 5с 1 бублик', 'уйти', 'поменять музыку', darkcity, playDarkGitaraMusic);
+
+  } else if (mapVariable === 'playGitara3') { // Используем else if
+    mapVariable = 'playGitara';
+    git3.pause();
+    git4.loop = true;
+    git4.play();
+    await choiceDialog2('За каждые 5с 1 бублик', 'уйти', 'поменять музыку', darkcity, playDarkGitaraMusic);
+
+  } else if (mapVariable === 'darkcity') {
+    git1.pause();
+    git2.pause();
+    git3.pause();
+    git4.pause();
+  }
+}
