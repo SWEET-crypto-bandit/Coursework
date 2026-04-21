@@ -26,6 +26,8 @@ function createShopUI() {
   container.innerHTML = `
         <div class="shop-box">
             medkit 30<br>
+            antiradan 45<br>
+            connection 10000<br>
             
             <div style="margin-top: 10px;">
                 <input id="namesItem" class="shop-input" type="text" placeholder="Предмет" onkeydown="if(event.key==='Enter'){event.preventDefault()}">
@@ -62,6 +64,7 @@ function buying() {
   if (Player.maney >= utogBuy) {
     Player.maney -= utogBuy;
     addToInventory(nameInput, quantity);
+    inventory();
     upInterface();
     shop();
   } else {

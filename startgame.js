@@ -1,4 +1,3 @@
-let flagStartVideo = 0;
 
 function continueGame() {
   if (typeof loadPlayerFromSave === 'function') {
@@ -30,29 +29,34 @@ try {
 }
 
 function onVideoEnd() {
-  if (flagStartVideo === 1) {
-    return;
-  }
+  
   if (typeof loadPlayerFromSave === 'function') {
     loadPlayerFromSave();
   }
-  video.src = 'music/История.mp4';
+  video.src = 'music/гтазаставка.mp4';
+  playMisuc16()
   video.muted = false;
   video.loop = false;
 
-  video.addEventListener(
-    'ended',
-    function () {
-      video.style.display = 'none';
-      playMisuc1();
-      titl();
-      flagStartVideo++;
-    },
+  window.addEventListener(
+    'keydown',
+    function (event) {  
+      if(event.code === 'Space') {
+    event.preventDefault();    
+    deleeteMusic2();
+    historyy();
+    flagStartVideo++;
+    }
+  },
     { once: true }
   );
 }
-
+async function historyy() {
+await videoTimerRevers('История')
+titl()
+}
 function titl() {
+  playMisuc1();
   const divContainer = document.createElement('div');
   divContainer.style.position = 'fixed';
   divContainer.style.top = '0';

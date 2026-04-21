@@ -21,6 +21,19 @@ async function applyTurnCosts() {
         hospital()
         return false
     }
+// бизнес
+    if (mapVariable !== 'director' && mapVariable !== 'snackBar') {
+    if (Player.business && typeof Player.business === 'object') {
+        if (Player.business.owned === true) {
+            if (typeof Player.business.balance !== 'number' || Number.isNaN(Player.business.balance)) {
+                Player.business.balance = 0
+            }
+            Player.business.balance += 50
+        }
+    } else {
+        Player.business = { owned: false, balance: 0 }
+    }
+}
     upInterface()
     return true
 }

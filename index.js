@@ -3,4 +3,3 @@ function startGame() {
   onVideoEnd();
 }
 
-function gemplay() {}

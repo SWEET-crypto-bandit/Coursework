@@ -1,5 +1,6 @@
 async function sudrovich() {
   mapVariable = 'sudrovich';
+  closeSidorShop()
   if (!(await applyTurnCosts())) return;
   playchigur();
   playsid1();
@@ -9,13 +10,13 @@ async function sudrovich() {
     'Хабар принес?',
     'Продать',
     'расскажи что происходит сейчас',
-    'й',
-    'с',
+    'в разработке',
+    'в разработке',
     'выйти в город',
     sellShop,
     dialog1,
-    '',
-    '',
+    sudrovich,
+    sudrovich,
     city
   );
 }
@@ -37,6 +38,7 @@ async function shop() {
 }
 async function hospital() {
 mapVariable = 'hospital';
+
 playMisuc5()
 playMisuc3();
 playMisuc14() 
@@ -92,7 +94,7 @@ async function darkcity() {
     await videoTimerRevers('темныйгород');
     playDarkMisuc1();
     videoRevers('стоптемныйгород');
-    await choiceDialog5('Опасный район', 'зайти в закусочную', 'В', 'играть на гитаре', 'пойти в темный переулок', 'обратно в город', snackBar, '', playGitara, darkLane, city)
+    await choiceDialog5('Опасный район', 'зайти в закусочную', 'В разработке', 'играть на гитаре', 'пойти в темный переулок', 'обратно в город', snackBar, darkcity, playGitara, darkLane, city)
 }
 async function playGitara() {
     mapVariable = 'playGitara';
@@ -113,15 +115,6 @@ async function snackBar() {
     videoRevers('закусочная')
     video.loop = true;
     await choiceDialog3('Закусочная', 'меню', 'пойти в кабинет директора', 'выйти', snackBarBuy, director, darkcity)
-}
-async function director() {
-    mapVariable = 'director';
-    if (!(await applyTurnCosts())) return;
-    playDarkMisuc3();
-    playDarkMisuc5() 
-    videoRevers('директор')
-    video.loop = true;
-    await choiceDialog3('Кабинет директора', 'ааа', 'купить бизнес (10000 монет)', 'выйти', '', '', snackBar);
 }
 
 // враги
@@ -144,11 +137,13 @@ async function desert() {
     'найти врага',
     'в город',
     '395мурино',
-    'd',
-    'а',
+    'в разработке',
+    'в разработке',
     () => pvp1(Enemy, 'ежбой'),
     city,
-    boss
+    boss,
+    desert,
+    desert
   );
 }
 async function boss() {
@@ -159,13 +154,11 @@ async function boss() {
   playMisuc12();
   videoRevers('395boss');
   video.loop = true;
-  choiceDialog3(
+  choiceDialog2(
     'что привело тебя сюда?',
     'сразиться с тобой',
-    'давай сыграем в игру на ежа',
     'я пойду обратно',
     () => pvp2(Boss, '0битвабосс'),
-    '',
     desert
   );
 }

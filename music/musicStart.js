@@ -99,6 +99,12 @@ function playMisuc14() {
 function playMisuc15() {
   document.getElementById('bgMusic15').play()
 }
+function playMisuc16() { // гта заставка
+  const dd = document.getElementById('bgMusic16')
+dd.loop = true
+dd.play()
+}
+
 
 function playDarkMisuc1 () {
    const dd = document.getElementById('bgDarkMisuc1')

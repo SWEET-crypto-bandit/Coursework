@@ -1,4 +1,17 @@
 function upInterface() {
+  // HUD должен появляться только в игре, поэтому включаем его
+  // ровно в момент первого реального обновления интерфейса.
+  if (typeof interFace !== 'undefined' && interFace) {
+    interFace.style.display = 'block';
+    interFace.classList?.remove('hidden');
+  }
+
+  const inventoryBtn = document.querySelector('.startInvertiry');
+  if (inventoryBtn) {
+    inventoryBtn.style.display = 'block';
+    inventoryBtn.classList.remove('hidden');
+  }
+
   hp.textContent = `ХП  ${Player.health}❤️`;
   $.textContent = ` MANEY ${Player.maney}💸`;
   food.textContent = ` food ${Player.food}🍕`

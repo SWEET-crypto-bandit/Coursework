@@ -52,10 +52,14 @@ function hasPlayerSave() {
 function deletePlayerSave() {
   try {
     localStorage.removeItem(PLAYER_SAVE_KEY);
-    hospital()
+    if (mapVariable === 'hospital') {
+      hospital()
+    }
     return true;
   } catch (e) {
-    hospital()
+    if (mapVariable === 'hospital') {
+      hospital()
+    }
     console.error('deletePlayerSave: failed', e);
     return false;
   }

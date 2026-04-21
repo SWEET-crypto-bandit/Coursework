@@ -43,6 +43,7 @@ function buyingSnackBar() {
   if (Player.maney >= utogBuy) {
     Player.maney -= utogBuy;
     addToInventory(nameInput, quantity);
+    inventory();
     upInterface();
     snackBar() 
   } else {

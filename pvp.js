@@ -81,7 +81,7 @@ function checkPvp(vrag) {
     );
   } else {
     addToInventory('needle', 3);
-    addToInventory('Meat', 1);
+    addToInventory('meat', 1);
     applyTurnCosts()
     vrag.health = vrag.maxHealth;
     upInterface();
@@ -225,7 +225,7 @@ async function checkPvp2(vrag) {
     vrag.health = vrag.maxHealth;
     clearAllDialogs();
     hideEnemy2();
-    desert(); // или другая функция для pvp2, например desert2() конец игры
+    
   }
 }
 

@@ -16,8 +16,15 @@ function useItem(itemId) {
     case 'Бита':
       bits(itemId);
       break;
+    case 'рация':
+      connection()
+      break;
+    case 'антирадан':
+      antiradan(itemId)
+      break;
   }
 }
+// добавить в инвентарь
 function addToInventory(itemId, count) {
   if (!items[itemId]) {
     console.error(`Предмет "${itemId}" не существует в базе items`);
@@ -30,6 +37,34 @@ function addToInventory(itemId, count) {
     existingItem.count += count;
   } else {
     Player.inventory.push({ id: itemId, count });
+  }
+}
+// удалить из инвентаря
+function removeFromInventory(itemId, count) {
+  
+  if (!items[itemId]) {
+    return;
+  }
+
+  const itemIndex = Player.inventory.findIndex((i) => i.id === itemId);
+
+  if (itemIndex !== -1) {
+    const existingItem = Player.inventory[itemIndex];
+
+    if (existingItem.count >= count) {
+      existingItem.count -= count;
+
+      
+      if (existingItem.count <= 0) {
+        Player.inventory.splice(itemIndex, 1);
+      } else {
+        console.log(`Удалено ${count} шт. Текущее количество "${itemId}": ${existingItem.count}`);
+      }
+    } else {
+      console.error(`Ошибка: Недостаточно "${itemId}" в инвентаре (есть ${existingItem.count}, нужно ${count})`);
+    }
+  } else {
+    console.error(`Ошибка: Предмета "${itemId}" нет в инвентаре игрока`);
   }
 }
 
@@ -111,4 +146,22 @@ function bits(itemId) {
         checkPvp4(pvpVarible, 'чигурпоражение');
         playMisuc15() 
       }
+}
+async function connection() {
+if (mapVariable !== 'pvp2') return;
+Boss.health = -1
+checkPvp2(Boss)
+await videoTimerRevers('конец')
+deletePlayerSave()
+await videoTimerRevers('конецточно')
+}
+function antiradan(itemId) {
+  if (Player.radiation - 30 < 0) return;
+  const slot = Player.inventory.find((item) => item.id === itemId);
+  if (slot && slot.count > 0) {
+  Player.radiation -= 30
+  slot.count -= 1;
+  upInterface();
+  inventory();
+}
 }

@@ -29,19 +29,25 @@ const Chigur = {
 const Player = {
   name: '',
   maney: 10000,
-  food: 50,
+  food: 100,
   maxFood: 100,
-  health: 20,
+  health: 90,
   maxHealth: 100,
   damage: 4,
-  radiation: 90,
+  radiation: 0,
+  business: {
+    owned: false,
+    balance: 0,
+  },
   inventory: [
-    { id: 'needle', count: 1 },
+    { id: 'needle', count: 111 },
     { id: 'medkit', count: 222 },
-    { id: 'meat', count: 0 },
+    { id: 'meat', count: 3 },
     { id: 'grilledMeat', count: 0 },
     { id: 'soupHedgehog', count: 1 },
     { id: 'bits', count: 1 },
+    { id: 'connection', count: 1 },
+    { id: 'antiradan', count: 33 },
   ],
 };
 // предметы игры
@@ -52,6 +58,8 @@ const items = {
   grilledMeat: { name: 'Жаренное Мясо', price: 6 },
   soupHedgehog: { name: 'Суп из ежа', price: 25 },
   bits: { name: 'Бита', price: 10 },
+  connection: { name: 'рация', price: 10000 },
+  antiradan: { name: 'антирадан', price: 45 },
 };
 
 const Dialog = {

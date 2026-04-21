@@ -36,13 +36,13 @@ function finishDeal() {
     'Хабар принес?',
     'Продать',
     'расскажи что происходит сейчас',
-    'й',
-    'с',
+    'в разработке',
+    'в разработке',
     'выйти в город',
     sellShop,
     dialog1,
-    '',
-    '',
+    sudrovich,
+    sudrovich,
     city
   );
   closeSidorShop();
