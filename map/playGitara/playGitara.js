@@ -8,11 +8,11 @@ async function playGitaraMany() {
 
   guitarInterval = setInterval(() => {
     if (!mapVariable.includes('playGitara')) {
-      clearInterval(guitarInterval); 
-      guitarInterval = null; 
-      return; 
+      clearInterval(guitarInterval);
+      guitarInterval = null;
+      return;
     }
-    Player.maney += 1; 
+    Player.maney += 1;
     upInterface();
   }, 5000);
 }

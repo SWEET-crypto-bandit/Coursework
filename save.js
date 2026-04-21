@@ -25,10 +25,10 @@ function savePlayer() {
     const player = getPlayer();
     if (!player) return false;
     localStorage.setItem(PLAYER_SAVE_KEY, JSON.stringify(player));
-    hospital()
+    hospital();
     return true;
   } catch (e) {
-    hospital()
+    hospital();
     console.error('savePlayer: failed', e);
     return false;
   }
@@ -53,12 +53,12 @@ function deletePlayerSave() {
   try {
     localStorage.removeItem(PLAYER_SAVE_KEY);
     if (mapVariable === 'hospital') {
-      hospital()
+      hospital();
     }
     return true;
   } catch (e) {
     if (mapVariable === 'hospital') {
-      hospital()
+      hospital();
     }
     console.error('deletePlayerSave: failed', e);
     return false;
@@ -106,4 +106,3 @@ window.savePlayer = savePlayer;
 window.hasPlayerSave = hasPlayerSave;
 window.deletePlayerSave = deletePlayerSave;
 window.loadPlayerFromSave = loadPlayerFromSave;
-

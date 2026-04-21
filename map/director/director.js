@@ -1,4 +1,3 @@
-
 /**
  * Директор: покупка бизнеса + снятие выручки.
  * Деньги копятся за каждый "ход" в `applyTurnCosts()` (см. move.js).
@@ -21,14 +20,16 @@ function ensureBusiness() {
     Player.business.owned = false;
   }
   // @ts-ignore
-  if (typeof Player.business.balance !== 'number' || Number.isNaN(Player.business.balance)) {
+  if (
+    typeof Player.business.balance !== 'number' ||
+    Number.isNaN(Player.business.balance)
+  ) {
     // @ts-ignore
     Player.business.balance = 0;
   }
   // @ts-ignore
   return Player.business;
 }
-
 
 function formatCoins(n) {
   const v = Math.max(0, Math.floor(Number(n) || 0));
@@ -70,9 +71,9 @@ function directorMenu() {
     'выйти',
     buyText,
     collectText,
-    
+
     exitCb,
-    
+
     buyBusinessFromDirector,
 
     collectBusinessMoney
@@ -134,4 +135,3 @@ async function collectBusinessMoney() {
   }
   directorMenu();
 }
-
