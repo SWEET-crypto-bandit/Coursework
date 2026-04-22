@@ -18,7 +18,7 @@ async function applyTurnCosts() {
   }
   if (Player.health < 1 && Player.food < 1) {
     Player.food = 20;
-    hospital()
+    hospital();
     return false;
   }
   // бизнес
