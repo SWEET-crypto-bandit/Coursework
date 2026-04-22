@@ -167,7 +167,3 @@ function antiradan(itemId) {
     inventory();
   }
 }
-function sfggsdfgfsd() {
-  let fdsf = [];
-  let gdfgfdgfd = z;
-}
