@@ -1,11 +1,9 @@
-// @ts-check
+
 // save.js на 83% написан с помощью ии
 const PLAYER_SAVE_KEY = 'player_save_v1';
 
 /**
  * Безопасно получить глобальный Player (он объявлен в `player.js` как `const Player = ...`).
- * Важно: `const Player` НЕ попадает в `window.Player`, поэтому читаем именно идентификатор `Player`.
- * @returns {import('./types').Player | null}
  */
 function getPlayer() {
   try {
@@ -66,8 +64,7 @@ function deletePlayerSave() {
 }
 
 /**
- * Загрузить сохранённого Player из localStorage и "влить" в существующий объект Player.
- * Ничего не сохраняет автоматически.
+ * Загрузить сохранённого Player из localStorage и "влить" в существующий объект Player.мм
  */
 function loadPlayerFromSave() {
   try {

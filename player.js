@@ -28,7 +28,7 @@ const Chigur = {
 /** @type {import('./types').Player} */
 const Player = {
   name: '',
-  maney: 10000,
+  maney: 6500,
   food: 100,
   maxFood: 100,
   health: 90,
@@ -40,14 +40,14 @@ const Player = {
     balance: 0,
   },
   inventory: [
-    { id: 'needle', count: 111 },
+    { id: 'needle', count: 222 },
     { id: 'medkit', count: 222 },
-    { id: 'meat', count: 3 },
-    { id: 'grilledMeat', count: 0 },
-    { id: 'soupHedgehog', count: 1 },
-    { id: 'bits', count: 1 },
-    { id: 'connection', count: 1 },
-    { id: 'antiradan', count: 33 },
+    { id: 'meat', count: 222 },
+    { id: 'grilledMeat', count: 222 },
+    { id: 'soupHedgehog', count: 222 },
+    { id: 'bits', count: 222 },
+    { id: 'connection', count: 222 },
+    { id: 'antiradan', count: 222 },
   ],
 };
 // предметы игры
