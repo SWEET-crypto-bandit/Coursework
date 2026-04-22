@@ -1,4 +1,3 @@
-
 // save.js на 83% написан с помощью ии
 const PLAYER_SAVE_KEY = 'player_save_v1';
 
