@@ -19,7 +19,9 @@
     "prettier": "^3.8.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,json,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,css,md,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "acorn": "^8.16.0",
