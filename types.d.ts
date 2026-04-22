@@ -29,8 +29,6 @@ export interface Player {
 }
 
 declare global {
-  
-
   function applyTurnCosts(): Promise<boolean>;
   function upInterface(): void;
   function videoRevers(ss: string): void;
@@ -46,12 +44,10 @@ declare global {
     callback3?: (() => any) | null
   ): Promise<number>;
 
-  
   function snackBar(): Promise<void> | void;
   function darkcity(): Promise<void> | void;
   function city(): Promise<void> | void;
 
- 
   function playDarkMisuc3(): void;
   function playDarkMisuc5(): void;
 }

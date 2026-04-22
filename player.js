@@ -9,22 +9,22 @@ const Enemy = {
 };
 const Boss = {
   name: 'Бог зоны',
-  health: 1000,
-  maxHealth: 1000,
-  damage: 20,
+  health: 2000,
+  maxHealth: 2000,
+  damage: 2000,
 };
 const Men = {
   name: 'Мужик',
   health: 100,
   maxHealth: 100,
   damage: 8,
-}
+};
 const Chigur = {
   name: 'Чигур',
   health: 100,
   maxHealth: 100,
   damage: 80,
-}
+};
 /** @type {import('./types').Player} */
 const Player = {
   name: '',
@@ -63,5 +63,5 @@ const items = {
 };
 
 const Dialog = {
-      darklane: false,
-}
+  darklane: false,
+};

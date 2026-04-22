@@ -2,4 +2,3 @@ function startGame() {
   deleteBgmSta();
   onVideoEnd();
 }
-

@@ -1,7 +1,7 @@
 // битва с ежом
 async function pvp1(vrag, video) {
   mapVariable = 'pvp1';
-  pvpVarible = Enemy
+  pvpVarible = Enemy;
   playMisuc5();
   videoRevers(video);
   playMisuc3();
@@ -63,9 +63,9 @@ function checkPvp(vrag) {
   if (Player.health <= 0) {
     clearAllDialogs();
     hideEnemy();
-    Player.radiation += 4
+    Player.radiation += 4;
     upInterface();
-    hospital()
+    hospital();
     return;
   }
   if (vrag.health > 0) {
@@ -82,12 +82,12 @@ function checkPvp(vrag) {
   } else {
     addToInventory('needle', 3);
     addToInventory('meat', 1);
-    applyTurnCosts()
+    applyTurnCosts();
     vrag.health = vrag.maxHealth;
     upInterface();
     clearAllDialogs();
     hideEnemy();
-    desert()
+    desert();
   }
 }
 
@@ -141,9 +141,9 @@ function hideEnemy() {
 
 //битва с боссом
 async function pvp2(vrag, video) {
-  mapVariable = 'pvp2'; 
-  pvpVarible = Boss
-  playMisuc12()
+  mapVariable = 'pvp2';
+  pvpVarible = Boss;
+  playMisuc12();
   playMisuc5();
   videoRevers(video);
   playMisuc3();
@@ -170,7 +170,7 @@ function moveAtak2(vrag) {
 
 function moveAtakBlok2(vrag) {
   const luck = Math.floor(Math.random() * 11);
-  
+
   if (luck > 7) {
     vrag.health -= Player.damage * 2;
     console.log('pvp2: crit');
@@ -185,7 +185,7 @@ function moveAtakBlok2(vrag) {
     Player.health -= vrag.damage * 4;
     console.log('pvp2: fail');
   }
-  
+
   playMisuc4();
   checkPvp2(vrag);
 }
@@ -201,14 +201,14 @@ async function checkPvp2(vrag) {
   if (Player.health <= 0) {
     clearAllDialogs();
     hideEnemy2();
-    await videoTimerRevers('поражениебосс')
+    await videoTimerRevers('поражениебосс');
     vrag.health = vrag.maxHealth;
-    Player.radiation += 10
+    Player.radiation += 10;
     upInterface();
-    hospital()
+    hospital();
     return;
   }
-  
+
   if (vrag.health > 0) {
     enemy2(vrag);
     choiceDialog3(
@@ -225,7 +225,6 @@ async function checkPvp2(vrag) {
     vrag.health = vrag.maxHealth;
     clearAllDialogs();
     hideEnemy2();
-    
   }
 }
 
@@ -279,8 +278,8 @@ function hideEnemy2() {
 // мужик в переулке
 async function pvp3(vrag, video) {
   mapVariable = 'pvp3';
-  playDarkMisuc6()
-  pvpVarible = Men 
+  playDarkMisuc6();
+  pvpVarible = Men;
   playMisuc5(); // Твоя стандартная музыка начала боя
   playMisuc12(); // Можно добавить уникальный трек для этого боя
   videoRevers(video);
@@ -298,17 +297,16 @@ async function pvp3(vrag, video) {
   enemy3(vrag);
 }
 
-
 function moveAtak3(vrag) {
   vrag.health -= Player.damage;
   Player.health -= vrag.damage;
-  playMisuc4(); 
+  playMisuc4();
   checkPvp3(vrag);
 }
 
 function moveAtakBlok3(vrag) {
   const luck = Math.floor(Math.random() * 11);
-  
+
   if (luck > 7) {
     vrag.health -= Player.damage * 3;
     console.log('pvp3: crit');
@@ -316,13 +314,12 @@ function moveAtakBlok3(vrag) {
     Player.health -= vrag.damage * 4;
     console.log('pvp3: fail');
   } else {
-    
     const dmg = Math.floor((Player.damage || 0) / 2);
     vrag.health -= dmg;
     Player.health -= vrag.damage * 2;
     console.log('pvp3: partial');
   }
-  
+
   playMisuc4();
   checkPvp3(vrag);
 }
@@ -332,7 +329,6 @@ function moveHil3(vrag) {
   checkPvp3(vrag);
 }
 
-
 async function checkPvp3(vrag) {
   upInterface();
 
@@ -340,16 +336,16 @@ async function checkPvp3(vrag) {
     // Логика поражения в переулке
     clearAllDialogs();
     hideEnemy3();
-    mapVariable = 'hospital'
-    playDarkMisuc6()
-    await videoTimerRevers('поражениемужик')
+    mapVariable = 'hospital';
+    playDarkMisuc6();
+    await videoTimerRevers('поражениемужик');
     vrag.health = vrag.maxHealth;
-    hospital(); 
+    hospital();
     return;
   }
-  
+
   if (vrag.health > 0) {
-    enemy3(vrag); 
+    enemy3(vrag);
     choiceDialog3(
       'Что выберешь',
       'Atak',
@@ -360,12 +356,11 @@ async function checkPvp3(vrag) {
       () => moveHil3(vrag)
     );
   } else {
-    
-    addToInventory('bits', 1); 
+    addToInventory('bits', 1);
     vrag.health = vrag.maxHealth;
     clearAllDialogs();
     hideEnemy3();
-    darkcity(); 
+    darkcity();
   }
 }
 
@@ -403,7 +398,10 @@ function enemy3(vrag) {
 
   const enemyHp = document.getElementById('enemyHp3');
   if (enemyHp) {
-    const percent = Math.max(0, Math.floor((vrag.health / vrag.maxHealth) * 100));
+    const percent = Math.max(
+      0,
+      Math.floor((vrag.health / vrag.maxHealth) * 100)
+    );
     enemyHp.style.width = percent + '%';
   }
 }
@@ -414,14 +412,14 @@ function hideEnemy3() {
     enemyContainer.style.display = 'none';
   }
 }
-// чигур 
+// чигур
 async function pvp4(vrag, video, videoDeath) {
   mapVariable = 'pvp4';
-playchigur()
-  pvpVarible = Chigur
+  playchigur();
+  pvpVarible = Chigur;
   videoRevers(video);
   video.loop = true;
-  checkPvp4(vrag, videoDeath)
+  checkPvp4(vrag, videoDeath);
 
   choiceDialog3(
     'Что выберешь',
@@ -438,13 +436,13 @@ playchigur()
 function moveAtak4(vrag, videoDeath) {
   vrag.health -= Player.damage;
   Player.health -= vrag.damage;
-  playMisuc4(); 
+  playMisuc4();
   checkPvp4(vrag, videoDeath);
 }
 
 function moveAtakBlok4(vrag, videoDeath) {
   const luck = Math.floor(Math.random() * 11);
-  
+
   if (luck > 7) {
     vrag.health -= Player.damage * 3;
     console.log('pvp4: crit');
@@ -457,7 +455,7 @@ function moveAtakBlok4(vrag, videoDeath) {
     Player.health -= vrag.damage * 2;
     console.log('pvp4: partial');
   }
-  
+
   playMisuc4();
   checkPvp4(vrag, videoDeath);
 }
@@ -474,15 +472,15 @@ async function checkPvp4(vrag, videoDeath) {
     clearAllDialogs();
     hideEnemy4();
     mapVariable = 'hospital';
-    
+
     await videoTimerRevers(videoDeath);
     vrag.health = vrag.maxHealth;
-    hospital(); 
+    hospital();
     return;
   }
-  
+
   if (vrag.health > 0) {
-    enemy4(vrag); 
+    enemy4(vrag);
     choiceDialog3(
       'Что выберешь',
       'Atak',
@@ -493,14 +491,13 @@ async function checkPvp4(vrag, videoDeath) {
       () => moveHil4(vrag, videoDeath)
     );
   } else {
-    addToInventory('bits', 1); 
+    addToInventory('bits', 1);
     vrag.health = vrag.maxHealth;
     clearAllDialogs();
     hideEnemy4();
-    city()
+    city();
   }
 }
-
 
 function enemy4(vrag) {
   let enemyContainer = document.getElementById('enemyContainer4');
@@ -535,7 +532,10 @@ function enemy4(vrag) {
 
   const enemyHp = document.getElementById('enemyHp4');
   if (enemyHp) {
-    const percent = Math.max(0, Math.floor((vrag.health / vrag.maxHealth) * 100));
+    const percent = Math.max(
+      0,
+      Math.floor((vrag.health / vrag.maxHealth) * 100)
+    );
     enemyHp.style.width = percent + '%';
   }
 }

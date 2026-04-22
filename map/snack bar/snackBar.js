@@ -32,7 +32,7 @@ function buyingSnackBar() {
     typeof quantity !== 'number' ||
     Number.isNaN(quantity)
   ) {
-    snackBar() 
+    snackBar();
     const container = document.querySelector('.shop-box').parentElement;
     container.remove();
     return;
@@ -45,10 +45,10 @@ function buyingSnackBar() {
     addToInventory(nameInput, quantity);
     inventory();
     upInterface();
-    snackBar() 
+    snackBar();
   } else {
     upInterface();
-    snackBar() ;
+    snackBar();
   }
   const container = document.querySelector('.shop-box').parentElement;
   container.remove();

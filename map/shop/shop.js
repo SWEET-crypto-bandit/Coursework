@@ -10,10 +10,10 @@ async function eagle() {
   shop();
 }
 async function nut() {
-  Player.maney = 10
-  Player.health = 10
-  upInterface()
-  hospital()
+  Player.maney = 10;
+  Player.health = 10;
+  upInterface();
+  hospital();
 }
 // покупка предметов
 function shopBuy() {

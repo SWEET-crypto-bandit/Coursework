@@ -1,4 +1,3 @@
-
 function continueGame() {
   if (typeof loadPlayerFromSave === 'function') {
     loadPlayerFromSave();
@@ -14,7 +13,6 @@ function continueGame() {
   hospital();
 }
 
-
 try {
   const continueBtn = document.getElementById('continueGameBtn');
   if (
@@ -29,31 +27,30 @@ try {
 }
 
 function onVideoEnd() {
-  
   if (typeof loadPlayerFromSave === 'function') {
     loadPlayerFromSave();
   }
   video.src = 'music/гтазаставка.mp4';
-  playMisuc16()
+  playMisuc16();
   video.muted = false;
   video.loop = false;
 
   window.addEventListener(
     'keydown',
-    function (event) {  
-      if(event.code === 'Space') {
-    event.preventDefault();    
-    deleeteMusic2();
-    historyy();
-    flagStartVideo++;
-    }
-  },
+    function (event) {
+      if (event.code === 'Space') {
+        event.preventDefault();
+        deleeteMusic2();
+        historyy();
+        flagStartVideo++;
+      }
+    },
     { once: true }
   );
 }
 async function historyy() {
-await videoTimerRevers('История')
-titl()
+  await videoTimerRevers('История');
+  titl();
 }
 function titl() {
   playMisuc1();

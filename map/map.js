@@ -1,6 +1,6 @@
 async function sudrovich() {
   mapVariable = 'sudrovich';
-  closeSidorShop()
+  closeSidorShop();
   if (!(await applyTurnCosts())) return;
   playchigur();
   playsid1();
@@ -37,15 +37,15 @@ async function shop() {
   );
 }
 async function hospital() {
-mapVariable = 'hospital';
+  mapVariable = 'hospital';
 
-playMisuc5()
-playMisuc3();
-playMisuc14() 
-hpCheck()
-playchigur();
-videoRevers('больница')
- choiceDialog5(
+  playMisuc5();
+  playMisuc3();
+  playMisuc14();
+  hpCheck();
+  playchigur();
+  videoRevers('больница');
+  choiceDialog5(
     'Гос здрав',
     'лечиться за 1р',
     'сохраниться',
@@ -63,7 +63,7 @@ videoRevers('больница')
 async function city() {
   mapVariable = 'city';
   if (!(await applyTurnCosts())) return;
-playMisuc14() 
+  playMisuc14();
 
   playDarkMisuc1();
   playMisuc13();
@@ -85,36 +85,55 @@ playMisuc14()
   );
 }
 async function darkcity() {
-    mapVariable = 'darkcity';
-    if (!(await applyTurnCosts())) return;
-    playDarkMisuc6()
-    playDarkGitaraMusic()
-    playDarkMisuc3();
-    playchigur();
-    await videoTimerRevers('темныйгород');
-    playDarkMisuc1();
-    videoRevers('стоптемныйгород');
-    await choiceDialog5('Опасный район', 'зайти в закусочную', 'В разработке', 'играть на гитаре', 'пойти в темный переулок', 'обратно в город', snackBar, darkcity, playGitara, darkLane, city)
+  mapVariable = 'darkcity';
+  if (!(await applyTurnCosts())) return;
+  playDarkMisuc6();
+  playDarkGitaraMusic();
+  playDarkMisuc3();
+  playchigur();
+  await videoTimerRevers('темныйгород');
+  playDarkMisuc1();
+  videoRevers('стоптемныйгород');
+  await choiceDialog5(
+    'Опасный район',
+    'зайти в закусочную',
+    'В разработке',
+    'играть на гитаре',
+    'пойти в темный переулок',
+    'обратно в город',
+    snackBar,
+    darkcity,
+    playGitara,
+    darkLane,
+    city
+  );
 }
 async function playGitara() {
-    mapVariable = 'playGitara';
-   if (!(await applyTurnCosts())) return;
-    videoRevers('игранагитаре');
-    video.loop = true;
-    playGitaraMany()
-    playDarkMisuc1();
-    playDarkGitaraMusic()
-    
+  mapVariable = 'playGitara';
+  if (!(await applyTurnCosts())) return;
+  videoRevers('игранагитаре');
+  video.loop = true;
+  playGitaraMany();
+  playDarkMisuc1();
+  playDarkGitaraMusic();
 }
 async function snackBar() {
-    mapVariable = 'snackBar';
-    if (!(await applyTurnCosts())) return;
-    playDarkMisuc5() 
-    playDarkMisuc1()
-    playDarkMisuc3();
-    videoRevers('закусочная')
-    video.loop = true;
-    await choiceDialog3('Закусочная', 'меню', 'пойти в кабинет директора', 'выйти', snackBarBuy, director, darkcity)
+  mapVariable = 'snackBar';
+  if (!(await applyTurnCosts())) return;
+  playDarkMisuc5();
+  playDarkMisuc1();
+  playDarkMisuc3();
+  videoRevers('закусочная');
+  video.loop = true;
+  await choiceDialog3(
+    'Закусочная',
+    'меню',
+    'пойти в кабинет директора',
+    'выйти',
+    snackBarBuy,
+    director,
+    darkcity
+  );
 }
 
 // враги
@@ -124,9 +143,9 @@ async function desert() {
   playMisuc12();
   playMisuc5();
   playchigur();
-  if(Player.maney > 1000) {
-   await chigirCheck('чигурначало')
-    return
+  if (Player.maney > 1000) {
+    await chigirCheck('чигурначало');
+    return;
   }
   playMisuc3();
   await videoTimerRevers('runDesert');
@@ -163,15 +182,23 @@ async function boss() {
   );
 }
 async function darkLane() {
-    mapVariable = 'darkLane';
-    if (!(await applyTurnCosts())) return;
-    playDarkMisuc1 ()
-    await videoTimerRevers('темныйпереулок');
-    if (!Dialog.darklane) {
-        await creayDialog("Если бы я знал опасность этого переулка, я бы никогда в него не пошёл. Но сдаваться нельзя, никто не знает, что на уме сильного и сумашедшего мужика, вылезавший из мусорки.");
-        Dialog.darklane = true;
-    }
-    videoTimerRevers('стоптемныйпереулок');
-    video.loop = true;
-    await choiceDialog2('Незнакомый сумашедший мужик: жизнь или жизнь?', 'Что?', 'сразиться', ()=> pvp3(Men, 'боймужик'),()=> pvp3(Men, 'боймужик'));
+  mapVariable = 'darkLane';
+  if (!(await applyTurnCosts())) return;
+  playDarkMisuc1();
+  await videoTimerRevers('темныйпереулок');
+  if (!Dialog.darklane) {
+    await creayDialog(
+      'Если бы я знал опасность этого переулка, я бы никогда в него не пошёл. Но сдаваться нельзя, никто не знает, что на уме сильного и сумашедшего мужика, вылезавший из мусорки.'
+    );
+    Dialog.darklane = true;
+  }
+  videoTimerRevers('стоптемныйпереулок');
+  video.loop = true;
+  await choiceDialog2(
+    'Незнакомый сумашедший мужик: жизнь или жизнь?',
+    'Что?',
+    'сразиться',
+    () => pvp3(Men, 'боймужик'),
+    () => pvp3(Men, 'боймужик')
+  );
 }
