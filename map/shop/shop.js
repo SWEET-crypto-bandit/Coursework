@@ -25,6 +25,7 @@ function createShopUI() {
   const container = document.createElement('div');
   container.innerHTML = `
         <div class="shop-box">
+            НАЗВАНИЕ ЦЕНА<br>
             medkit 30<br>
             antiradan 45<br>
             connection 10000<br>

@@ -9,25 +9,24 @@
  
  */
 function ensureBusiness() {
-  // @ts-ignore - Player объявлен глобально в player.js
   if (!Player.business || typeof Player.business !== 'object') {
-    // @ts-ignore
+
     Player.business = { owned: false, balance: 0 };
   }
-  // @ts-ignore
+  
   if (typeof Player.business.owned !== 'boolean') {
-    // @ts-ignore
+    
     Player.business.owned = false;
   }
-  // @ts-ignore
+  
   if (
     typeof Player.business.balance !== 'number' ||
     Number.isNaN(Player.business.balance)
   ) {
-    // @ts-ignore
+    
     Player.business.balance = 0;
   }
-  // @ts-ignore
+  
   return Player.business;
 }
 
@@ -88,9 +87,7 @@ async function buyBusinessFromDirector() {
   }
 
   const PRICE = 5000;
-  // @ts-ignore
   if (Player.maney >= PRICE) {
-    // @ts-ignore
     Player.maney -= PRICE;
     business.owned = true;
     if (typeof upInterface === 'function') upInterface();
@@ -126,7 +123,6 @@ async function collectBusinessMoney() {
     return;
   }
 
-  // @ts-ignore
   Player.maney += amount;
   business.balance = 0;
   if (typeof upInterface === 'function') upInterface();

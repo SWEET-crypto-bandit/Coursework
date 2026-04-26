@@ -7,7 +7,8 @@ function createSnackBarUI() {
   const container = document.createElement('div');
   container.innerHTML = `
         <div class="shop-box">
-            soupHedgehog 25<br>
+        НАЗВАНИЕ ЦЕНА<br>
+        soupHedgehog 25<br>
             
             <div style="margin-top: 10px;">
                 <input id="namesItem" class="shop-input" type="text" placeholder="Предмет" onkeydown="if(event.key==='Enter'){event.preventDefault()}">

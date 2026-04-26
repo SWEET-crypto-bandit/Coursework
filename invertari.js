@@ -108,10 +108,10 @@ function grilledMeat(itemId) {
   }
 }
 function soupHedgehog(itemId) {
-  if (Player.food + 15 > Player.maxFood) return;
+  if (Player.food + 30 > Player.maxFood) return;
   const slot = Player.inventory.find((item) => item.id === itemId);
   if (slot && slot.count > 0) {
-    Player.food += 15;
+    Player.food += 30;
     slot.count -= 1;
     upInterface();
     inventory();
