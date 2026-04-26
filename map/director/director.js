@@ -10,23 +10,20 @@
  */
 function ensureBusiness() {
   if (!Player.business || typeof Player.business !== 'object') {
-
     Player.business = { owned: false, balance: 0 };
   }
-  
+
   if (typeof Player.business.owned !== 'boolean') {
-    
     Player.business.owned = false;
   }
-  
+
   if (
     typeof Player.business.balance !== 'number' ||
     Number.isNaN(Player.business.balance)
   ) {
-    
     Player.business.balance = 0;
   }
-  
+
   return Player.business;
 }
 

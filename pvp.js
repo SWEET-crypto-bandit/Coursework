@@ -204,10 +204,10 @@ async function checkPvp2(vrag) {
     await videoTimerRevers('поражениебосс');
     vrag.health = vrag.maxHealth;
     Player.radiation += 10;
-    const count = Player.inventory.find(item => item.id === 'meat').count
-    removeFromInventory('meat', count)
-    addToInventory('grilledMeat', count)
-    inventory()
+    const count = Player.inventory.find((item) => item.id === 'meat').count;
+    removeFromInventory('meat', count);
+    addToInventory('grilledMeat', count);
+    inventory();
     upInterface();
     hospital();
     return;
