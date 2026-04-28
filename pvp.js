@@ -80,7 +80,7 @@ function checkPvp(vrag) {
       () => moveHil(vrag)
     );
   } else {
-    addToInventory('needle', 3);
+    addToInventory('needle', 7);
     addToInventory('meat', 1);
     applyTurnCosts();
     vrag.health = vrag.maxHealth;

@@ -34,21 +34,40 @@ function onVideoEnd() {
   playMisuc16();
   video.muted = false;
   video.loop = false;
+  video.style.zIndex = '99999'; // для заставки по клику
+
+  let proceeded = false;
+  function proceed() {
+    if (proceeded) return;
+    proceeded = true;
+    deleeteMusic2();
+    historyy();
+  }
 
   window.addEventListener(
     'keydown',
     function (event) {
       if (event.code === 'Space') {
         event.preventDefault();
-        deleeteMusic2();
-        historyy();
-        flagStartVideo++;
+        proceed();
       }
     },
     { once: true }
   );
+
+  setTimeout(() => {
+    video.addEventListener(
+      'click',
+      function () {
+        proceed();
+      },
+      { once: true }
+    );
+  }, 200);
+  
 }
 async function historyy() {
+  video.style.zIndex = '-2'; // если видео не -2 то все сломается
   await videoTimerRevers('История');
   titl();
 }
