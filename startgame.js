@@ -64,7 +64,6 @@ function onVideoEnd() {
       { once: true }
     );
   }, 200);
-  
 }
 async function historyy() {
   video.style.zIndex = '-2'; // если видео не -2 то все сломается

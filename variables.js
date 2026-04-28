@@ -12,4 +12,3 @@ let startInver = true; // не помню уже
 
 const interFace = document.getElementById('interface');
 interFace.style.display = 'none';
-
