@@ -216,24 +216,24 @@ async function goHedgehog() {
   Player.mapy = sudrovich();
 }
 
-function skipToCharacterSelect() {
-  const video = document.getElementById('video');
-  document.querySelector('.startGame').remove();
-  // 1. Останавливаем видео
+// function skipToCharacterSelect() {
+//   const video = document.getElementById('video');
+//   document.querySelector('.startGame').remove();
+//   // 1. Останавливаем видео
 
-  upInterface();
-  // desert()
-  //     checkMap()
-  //     // 2. Удаляем видео (как будто оно закончилось)
+//   upInterface();
+//   // desert()
+//   //     checkMap()
+//   //     // 2. Удаляем видео (как будто оно закончилось)
 
-  //    playMisuc5()
-  //     // 3. Сразу запускаем то, что идет после видео
-  sudrovich();
-  //     video.muted = false
-  // твоя функция выбора персонажа
+//   //    playMisuc5()
+//   //     // 3. Сразу запускаем то, что идет после видео
+//   sudrovich();
+//   //     video.muted = false
+//   // твоя функция выбора персонажа
 
-  // 4. Кнопка старта уже должна быть удалена, если нет:
-  if (document.querySelector('.startGame')) {
-    document.querySelector('.startGame').remove();
-  }
-}
+//   // 4. Кнопка старта уже должна быть удалена, если нет:
+//   if (document.querySelector('.startGame')) {
+//     document.querySelector('.startGame').remove();
+//   }
+// }
